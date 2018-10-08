@@ -41,7 +41,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
-		<url-pattern>*.god</url-pattern>
+		<url-pattern>/*.god</url-pattern>
 	</servlet-mapping>
 	<!-- static resources -->  
     <servlet-mapping>  
