@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>员工管理-员工添加</title>
+	<meta charset="utf-8">
+</head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="css/iconfont.css" rel="stylesheet">                  
+<link href="css/nav.css" rel="stylesheet">
+
+	<style type="text/css">
+    *{
+        padding: 0;
+        margin: 0;
+    }
+	body{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		min-width: 1500px;
+        background-image: url(images/login_bg.jpg);
+       
+	}
+    #main{
+        height: 100%;
+        width: 85%;
+        position: absolute;
+        top:0;right:0;
+        background: url(images/all_bg1.jpg);
+        background-size: cover;
+    }
+    #head_1{
+        opacity: 0.8;
+        width: 100%;
+        height: 58px;
+        background-color: rgba(138,60,63,0.8);
+    }
+    #form{
+        width: 80%;
+        margin-top: 30px;
+        margin-left: 10%;
+    }
+    #form_1{
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+</style>
+<body>
+		<div class="nav" >
+    <div class="nav-top">
+        <div id="mini" style="border-bottom:1px solid rgba(255,255,255,0.1)"><img src="images/mini.png"  id="menu"><span style="color: #abb1b7;font-size: 20px;">老干爹火锅</span> </div>
+    </div>
+    <ul>  
+        <li class="nav-item">
+            <a href="index.html"><i class="my-icon nav-icon icon_1"></i><span>首页</span><i class="my-icon nav-more"></i></a>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_2"></i><span>买单结算</span><i class="my-icon nav-more"></i></a>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>前台服务</span><i class="my-icon nav-more"></i></a>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>菜品管理</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="javascript:;"><span>菜品列表</span></a></li>
+                <li><a href="javascript:;"><span>添加菜品</span></a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>会员管理</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="javascript:;"><span>会员列表</span></a></li>
+                <li><a href="javascript:;"><span>添加会员</span></a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>财务管理</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="javascript:;"><span>订单列表</span></a></li>
+                <li><a href="javascript:;"><span>日结算</span></a></li>
+                <li><a href="javascript:;"><span>总结算</span></a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>库存管理</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="javascript:;"><span>在线订货</span></a></li>
+                <li><a href="javascript:;"><span>导入入库单</span></a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>员工管理</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="employList.html"><span>员工列表</span></a></li>
+                <li><a href="employAdd.html"><span>添加员工</span></a></li>
+                <li><a href="employsalary.html"><span>发放薪资</span></a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div  id="main">
+    <!--页面head-->
+    <div id="head_1">
+        
+        <div class="dropdown" style="background: rgba(138,60,63,0.8);margin-left: 1120px;">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    陈伟
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">个人信息</a></li>
+    <li><a href="#">修改信息</a></li>
+    <li><a href="#">查看订单</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">退出</a></li>
+  </ul>
+</div>
+</div>
+<div>
+    <br>
+    <p style="font-size: 30px;color: #bb1a1a;font-family: 楷体">&nbsp员工添加</p>
+    <p>&nbsp&nbsp首页>员工管理>员工添加</p>
+</div>
+<div id="form"><!--form表单-->
+    <form>
+        <div>
+            <span style="font-weight: bold;font-size: 25px;font-family: 华文行楷">员工姓名&nbsp&nbsp</span>
+            <input type="text" id="form_1" placeholder="请输入姓名"  style="width: 85%">
+        </div><br>
+        <div>
+            <span style="font-weight: bold;font-size: 25px;font-family: 华文行楷">员工账号&nbsp&nbsp</span>
+            <input type="text" id="form_1" placeholder="请输入账号"  style="width: 85%">
+        </div><br>
+        <div>
+            <span style="font-weight: bold;font-size: 25px;font-family: 华文行楷">员工性别&nbsp&nbsp</span>
+            <input type="radio" name="gender"><span style="font-weight: bold;font-size: 25px;font-family: 华文行楷">&nbsp男&nbsp&nbsp</span>
+            <input type="radio" name="gender"><span style="font-weight: bold;font-size: 25px;font-family: 华文行楷">&nbsp女&nbsp&nbsp</span>
+        </div><br>
+        <div>
+            <span style="font-weight: bold;font-size: 25px;font-family: 华文行楷">员工职位&nbsp&nbsp</span>
+            
+            <select type="text" id="form_1" placeholder="请输入姓名"  style="width: 85%">
+                <option>董事长</option>
+                <option>经理</option>
+                <option>收营员</option>
+                <option>服务总监</option>
+            </select>
+        </div><br>
+        <div>
+            <span style="font-weight: bold;font-size: 25px;font-family: 华文行楷">联系电话&nbsp&nbsp</span>
+            <input type="text" id="form_1" placeholder="请输入联系电话"  style="width: 85%">
+        </div><br>
+        <div>
+            <span style="font-weight: bold;font-size: 25px;font-family: 华文行楷">家庭住址&nbsp&nbsp</span>
+            <input type="text" id="form_1" placeholder="请输入家庭住址"  style="width: 85%">
+        </div><br>
+        <div>
+            <span style="font-weight: bold;font-size: 25px;font-family: 华文行楷">登录密码&nbsp&nbsp</span>
+            <input type="text" id="form_1" placeholder="请输入登录密码"  style="width: 85%">
+        </div><br><br>
+        <div style="margin-left: 13%">
+            <input id="form_1" type="submit" name="login" value="确认添加" style="width: 48%;">
+            <input id="form_1" type="reset" name="login" value="清空重置" style="width: 49%;">
+        </div>
+    </form>
+</div>
+
+</div>
+
+</body>
+
+
+ <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript"  src="js/index.js"></script>
+</html>
