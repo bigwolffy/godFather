@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.TableInfoMapper">
+  <resultMap id="BaseResultMap" type="com.model.TableInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="tableNumber" jdbcType="INTEGER" property="tablenumber" />
+    <result column="tableName" jdbcType="VARCHAR" property="tablename" />
+    <result column="personAvail" jdbcType="INTEGER" property="personavail" />
+    <result column="isUse" jdbcType="VARCHAR" property="isuse" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, tableNumber, tableName, personAvail, isUse
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tableinfo
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tableinfo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.TableInfo">
+    insert into tableinfo (id, tableNumber, tableName, 
+      personAvail, isUse)
+    values (#{id,jdbcType=INTEGER}, #{tablenumber,jdbcType=INTEGER}, #{tablename,jdbcType=VARCHAR}, 
+      #{personavail,jdbcType=INTEGER}, #{isuse,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.TableInfo">
+    insert into tableinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="tablenumber != null">
+        tableNumber,
+      </if>
+      <if test="tablename != null">
+        tableName,
+      </if>
+      <if test="personavail != null">
+        personAvail,
+      </if>
+      <if test="isuse != null">
+        isUse,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tablenumber != null">
+        #{tablenumber,jdbcType=INTEGER},
+      </if>
+      <if test="tablename != null">
+        #{tablename,jdbcType=VARCHAR},
+      </if>
+      <if test="personavail != null">
+        #{personavail,jdbcType=INTEGER},
+      </if>
+      <if test="isuse != null">
+        #{isuse,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.TableInfo">
+    update tableinfo
+    <set>
+      <if test="tablenumber != null">
+        tableNumber = #{tablenumber,jdbcType=INTEGER},
+      </if>
+      <if test="tablename != null">
+        tableName = #{tablename,jdbcType=VARCHAR},
+      </if>
+      <if test="personavail != null">
+        personAvail = #{personavail,jdbcType=INTEGER},
+      </if>
+      <if test="isuse != null">
+        isUse = #{isuse,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.TableInfo">
+    update tableinfo
+    set tableNumber = #{tablenumber,jdbcType=INTEGER},
+      tableName = #{tablename,jdbcType=VARCHAR},
+      personAvail = #{personavail,jdbcType=INTEGER},
+      isUse = #{isuse,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
