@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.DailyIncomeMapper">
+  <resultMap id="BaseResultMap" type="com.model.DailyIncome">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="DATE" property="date" />
+    <result column="income" jdbcType="DOUBLE" property="income" />
+    <result column="spending" jdbcType="DOUBLE" property="spending" />
+    <result column="profits" jdbcType="DOUBLE" property="profits" />
+    <result column="balance" jdbcType="DOUBLE" property="balance" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, income, spending, profits, balance
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from dailyincome
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dailyincome
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.DailyIncome">
+    insert into dailyincome (id, date, income, 
+      spending, profits, balance
+      )
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=DATE}, #{income,jdbcType=DOUBLE}, 
+      #{spending,jdbcType=DOUBLE}, #{profits,jdbcType=DOUBLE}, #{balance,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.DailyIncome">
+    insert into dailyincome
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="income != null">
+        income,
+      </if>
+      <if test="spending != null">
+        spending,
+      </if>
+      <if test="profits != null">
+        profits,
+      </if>
+      <if test="balance != null">
+        balance,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=DATE},
+      </if>
+      <if test="income != null">
+        #{income,jdbcType=DOUBLE},
+      </if>
+      <if test="spending != null">
+        #{spending,jdbcType=DOUBLE},
+      </if>
+      <if test="profits != null">
+        #{profits,jdbcType=DOUBLE},
+      </if>
+      <if test="balance != null">
+        #{balance,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.DailyIncome">
+    update dailyincome
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=DATE},
+      </if>
+      <if test="income != null">
+        income = #{income,jdbcType=DOUBLE},
+      </if>
+      <if test="spending != null">
+        spending = #{spending,jdbcType=DOUBLE},
+      </if>
+      <if test="profits != null">
+        profits = #{profits,jdbcType=DOUBLE},
+      </if>
+      <if test="balance != null">
+        balance = #{balance,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.DailyIncome">
+    update dailyincome
+    set date = #{date,jdbcType=DATE},
+      income = #{income,jdbcType=DOUBLE},
+      spending = #{spending,jdbcType=DOUBLE},
+      profits = #{profits,jdbcType=DOUBLE},
+      balance = #{balance,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

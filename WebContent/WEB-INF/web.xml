@@ -41,29 +41,9 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
-		<url-pattern>/*.god</url-pattern>
+		<url-pattern>*.god</url-pattern>
 	</servlet-mapping>
-	<!-- static resources -->  
-    <servlet-mapping>  
-        <servlet-name>default</servlet-name>  
-        <url-pattern>*.css</url-pattern>  
-    </servlet-mapping>    
-    <servlet-mapping>  
-        <servlet-name>default</servlet-name>  
-        <url-pattern>*.gif</url-pattern>    
-    </servlet-mapping>  
-    <servlet-mapping>  
-        <servlet-name>default</servlet-name>  
-        <url-pattern>*.png</url-pattern>    
-    </servlet-mapping>  
-    <servlet-mapping>  
-        <servlet-name>default</servlet-name>  
-        <url-pattern>*.jpg</url-pattern>  
-    </servlet-mapping>  
-    <servlet-mapping>  
-        <servlet-name>default</servlet-name>  
-        <url-pattern>*.js</url-pattern>  
-    </servlet-mapping>  
+	  
     
     
     
@@ -96,7 +76,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>CharacterEncodingFilter</filter-name>
-		<url-pattern>*.do</url-pattern>
+		<url-pattern>*.god</url-pattern>
 	</filter-mapping>
 	
 	<!-- 防止sql注入的过滤器 -->

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.DishMapper">
+  <resultMap id="BaseResultMap" type="com.model.Dish">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="imgPath" jdbcType="VARCHAR" property="imgpath" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="purPrice" jdbcType="INTEGER" property="purprice" />
+    <result column="price" jdbcType="INTEGER" property="price" />
+    <result column="repertory" jdbcType="INTEGER" property="repertory" />
+    <result column="isHot" jdbcType="VARCHAR" property="ishot" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, imgPath, name, type, purPrice, price, repertory, isHot
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from dish
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dish
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.Dish">
+    insert into dish (id, imgPath, name, 
+      type, purPrice, price, 
+      repertory, isHot)
+    values (#{id,jdbcType=INTEGER}, #{imgpath,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{purprice,jdbcType=INTEGER}, #{price,jdbcType=INTEGER}, 
+      #{repertory,jdbcType=INTEGER}, #{ishot,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.Dish">
+    insert into dish
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="imgpath != null">
+        imgPath,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="purprice != null">
+        purPrice,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="repertory != null">
+        repertory,
+      </if>
+      <if test="ishot != null">
+        isHot,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="imgpath != null">
+        #{imgpath,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="purprice != null">
+        #{purprice,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=INTEGER},
+      </if>
+      <if test="repertory != null">
+        #{repertory,jdbcType=INTEGER},
+      </if>
+      <if test="ishot != null">
+        #{ishot,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.Dish">
+    update dish
+    <set>
+      <if test="imgpath != null">
+        imgPath = #{imgpath,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="purprice != null">
+        purPrice = #{purprice,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=INTEGER},
+      </if>
+      <if test="repertory != null">
+        repertory = #{repertory,jdbcType=INTEGER},
+      </if>
+      <if test="ishot != null">
+        isHot = #{ishot,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.Dish">
+    update dish
+    set imgPath = #{imgpath,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      purPrice = #{purprice,jdbcType=INTEGER},
+      price = #{price,jdbcType=INTEGER},
+      repertory = #{repertory,jdbcType=INTEGER},
+      isHot = #{ishot,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
