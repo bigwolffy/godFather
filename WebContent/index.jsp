@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,8 +7,8 @@
 	<meta charset="utf-8">
 </head>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link href="css/iconfont.css" rel="stylesheet">                  
-<link href="css/nav.css" rel="stylesheet">
+    <link href="css/iconfont.css" rel="stylesheet">
+     <link href="css/nav.css" rel="stylesheet">
 
 	<style type="text/css">
     *{
@@ -35,22 +37,6 @@
         height: 58px;
         background-color: rgba(138,60,63,0.8);
     }
-    #head_2{
-        width: 250px;
-        height: 150px;
-        margin-left: 60px;
-        margin-top: 30px;
-        float: left;
-        border: 2px solid black;
-    }
-    #head_3{
-        width: 250px;
-        height: 150px;
-        margin-left: 60px;
-        margin-top: 30px;
-        float: left;
-        border: 2px solid black;
-    }
 </style>
 <body>
 		<div class="nav" >
@@ -59,7 +45,7 @@
     </div>
     <ul>  
         <li class="nav-item">
-            <a href="index.html"><i class="my-icon nav-icon icon_1"></i><span>首页</span><i class="my-icon nav-more"></i></a>
+            <a href="javascript:;"><i class="my-icon nav-icon icon_1"></i><span>首页</span><i class="my-icon nav-more"></i></a>
         </li>
         <li class="nav-item">
             <a href="javascript:;"><i class="my-icon nav-icon icon_2"></i><span>买单结算</span><i class="my-icon nav-more"></i></a>
@@ -70,38 +56,41 @@
         <li class="nav-item">
             <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>菜品管理</span><i class="my-icon nav-more"></i></a>
             <ul>
-                <li><a href="javascript:;"><span>菜品列表</span></a></li>
-                <li><a href="javascript:;"><span>添加菜品</span></a></li>
+                <li><a href="javascript:;"><span>订单列表</span></a></li>
+                <li><a href="javascript:;"><span>打个酱油</span></a></li>
+                <li><a href="javascript:;"><span>也打酱油</span></a></li>
             </ul>
         </li>
         <li class="nav-item">
             <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>会员管理</span><i class="my-icon nav-more"></i></a>
             <ul>
-                <li><a href="javascript:;"><span>会员列表</span></a></li>
-                <li><a href="javascript:;"><span>添加会员</span></a></li>
+                <li><a href="javascript:;"><span>订单列表</span></a></li>
+                <li><a href="javascript:;"><span>打个酱油</span></a></li>
+                <li><a href="javascript:;"><span>也打酱油</span></a></li>
             </ul>
         </li>
         <li class="nav-item">
             <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>财务管理</span><i class="my-icon nav-more"></i></a>
             <ul>
                 <li><a href="javascript:;"><span>订单列表</span></a></li>
-                <li><a href="javascript:;"><span>日结算</span></a></li>
-                <li><a href="javascript:;"><span>总结算</span></a></li>
+                <li><a href="javascript:;"><span>打个酱油</span></a></li>
+                <li><a href="javascript:;"><span>也打酱油</span></a></li>
             </ul>
         </li>
         <li class="nav-item">
             <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>库存管理</span><i class="my-icon nav-more"></i></a>
             <ul>
-                <li><a href="javascript:;"><span>在线订货</span></a></li>
-                <li><a href="javascript:;"><span>导入入库单</span></a></li>
+                <li><a href="javascript:;"><span>订单列表</span></a></li>
+                <li><a href="javascript:;"><span>打个酱油</span></a></li>
+                <li><a href="javascript:;"><span>也打酱油</span></a></li>
             </ul>
         </li>
         <li class="nav-item">
             <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>员工管理</span><i class="my-icon nav-more"></i></a>
             <ul>
-                <li><a href="employList.html"><span>员工列表</span></a></li>
-                <li><a href="employAdd.html"><span>添加员工</span></a></li>
-                <li><a href="javascript:;"><span>发放薪资</span></a></li>
+                <li><a href="javascript:;"><span>订单列表</span></a></li>
+                <li><a href="javascript:;"><span>打个酱油</span></a></li>
+                <li><a href="javascript:;"><span>也打酱油</span></a></li>
             </ul>
         </li>
     </ul>
@@ -128,22 +117,11 @@
 
     </div>
     <div >
-        <a href="#" style="color: green;font-size: 36px;font-family: 隶书">首&nbsp页</a><span style="font-family: 隶书;font-size: 20px">//老干爹火锅，想到不到的刺激！</span>
+        <a href="#" style="color: green;font-size: 36px;font-family: 隶书">首&nbsp;页</a><span style="font-family: 隶书;font-size: 20px">//老干爹火锅，想到不到的刺激！</span>
                 <!-- <span>&gt;</span> <a href="#">chinese</a>
                 <span>&gt;</span> fsf -->
-    </div>
-    <div>
-    <div id="head_2">就餐已有</div>
-    <div id="head_2">今日生日</div>
-    <div id="head_2">营业利润</div>
-    <div id="head_2">员工人数</div>
-    </div>
-
-    <div>
-    <div style="width: 800px;height: 350px;margin-left: 60px;margin-top: 30px;float: left;border: 2px solid black;">就餐已有</div>
-    <div style="width: 300px;height: 350px;margin-left: 80px;margin-top: 30px;float: left;border: 2px solid black;">今日生日</div>
+            </div>
     
-    </div>
 </div>
 
 </body>
