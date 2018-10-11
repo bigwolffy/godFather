@@ -6,10 +6,7 @@ import com.model.Staff;
 
 
 public interface StaffMapper {
-    int deleteByPrimaryKey(Integer id);
-
-    int insert(Staff record);
-
+	
     int insertSelective(Staff record);
 
     Staff selectByPrimaryKey(Integer id);
@@ -18,7 +15,17 @@ public interface StaffMapper {
 
     int updateByPrimaryKeyWithBLOBs(Staff record);
 
-    int updateByPrimaryKey(Staff record);
+    
+  
     
     List<Staff> login(Staff staff);
+    
+    List<Staff> searchStaff(Staff staff);
+    
+    int insert(Staff record);
+    
+    int updateByPrimaryKey(Staff record);
+    
+    int deleteByPrimaryKey(Staff staff);
+    
 }

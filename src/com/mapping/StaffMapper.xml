@@ -2,10 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.StaffMapper">
 
-  <select id="login" parameterType="com.model.Staff"  resultType="com.model.Staff">
+    <select id="login" parameterType="com.model.Staff"  resultType="com.model.Staff">
        select * from staff where name=#{name} and password=#{password}
     </select>
-
+    
+      <select id="searchStaff" parameterType="com.model.Staff"  resultType="com.model.Staff">
+       select * from staff where 
+        <if test="id != ''">
+        id=#{id} and
+      </if>
+      <if test="name != ''">
+        name=#{name} and
+      </if>
+      <if test="sex != ''">
+        sex=#{sex} and
+      </if>
+      <if test="position != ''">
+        position=#{position} and
+      </if>
+       state=1  
+     </select>
   
   <resultMap id="BaseResultMap" type="com.model.Staff">
     <id column="id" jdbcType="INTEGER" property="id" />
@@ -32,7 +48,7 @@
     from staff
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="com.model.Staff">
     delete from staff
     where id = #{id,jdbcType=INTEGER}
   </delete>

@@ -1,5 +1,5 @@
 package com.controller;
-
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -14,15 +14,14 @@ import com.model.Staff;
 import com.service.StaffService;
 
 
-
 @Controller
-@RequestMapping("user")
+@RequestMapping("staff")
 public class StaffController {
       
        @Resource
        private StaffService staffService;
 	
-	  //用户登陆	   
+	  //员工登陆	   
 	   @RequestMapping("login.god")
 	   @ResponseBody
 	   public JSONObject login(@RequestBody Staff staff) {
@@ -31,10 +30,36 @@ public class StaffController {
 	}
 	   
 	   
-	
-	   @RequestMapping("aaa.god")
-	   public void login(String a) {
-		  System.out.println(a);
+	 //搜索员工信息
+	   @RequestMapping("searchStaff.god")
+	   @ResponseBody
+	   public List<Staff> searchStaff(@RequestBody Staff staff) {
+		  return staffService.searchStaff(staff);
+		  
+	}
+	   
+      //新增员工
+	   @RequestMapping("insertStaff.god")
+	   @ResponseBody
+	   public JSONObject insertStaff(@RequestBody Staff staff) {
+		  return staffService.insertStaff(staff);
+		  
+	}
+	   
+	   
+	   //修改员工
+	   @RequestMapping("insertStaff.god")
+	   @ResponseBody
+	   public JSONObject updateByPrimaryKey(@RequestBody Staff staff) {
+		  return staffService.insertStaff(staff);
+		  
+	}
+	   
+	   //删除员工
+	   @RequestMapping("insertStaff.god")
+	   @ResponseBody
+	   public JSONObject deleteByPrimaryKey(@RequestBody Staff staff) {
+		  return staffService.insertStaff(staff);
 		  
 	}
 }
