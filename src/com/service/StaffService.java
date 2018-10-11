@@ -16,4 +16,6 @@ public interface StaffService {
 	JSONObject updateByPrimaryKey(Staff staff);
 	
 	JSONObject deleteByPrimaryKey(Staff staff);
+	
+	
 }
