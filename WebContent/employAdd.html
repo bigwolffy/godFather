@@ -6,7 +6,6 @@
 </head>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link href="css/iconfont.css" rel="stylesheet">                  
-<link href="css/nav.css" rel="stylesheet">
 
 	<style type="text/css">
     *{
@@ -17,13 +16,10 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		min-width: 1500px;
-        background-image: url(images/login_bg.jpg);
-       
 	}
     #main{
         height: 100%;
-        width: 85%;
+        width: 100%;
         position: absolute;
         top:0;right:0;
         background: url(images/all_bg1.jpg);
@@ -59,64 +55,13 @@
 }
 </style>
 <body>
-		<div class="nav" >
-    <div class="nav-top">
-        <div id="mini" style="border-bottom:1px solid rgba(255,255,255,0.1)"><img src="images/mini.png"  id="menu"><span style="color: #abb1b7;font-size: 20px;">老干爹火锅</span> </div>
-    </div>
-    <ul>  
-        <li class="nav-item">
-            <a href="index.html"><i class="my-icon nav-icon icon_1"></i><span>首页</span><i class="my-icon nav-more"></i></a>
-        </li>
-        <li class="nav-item">
-            <a href="javascript:;"><i class="my-icon nav-icon icon_2"></i><span>买单结算</span><i class="my-icon nav-more"></i></a>
-        </li>
-        <li class="nav-item">
-            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>前台服务</span><i class="my-icon nav-more"></i></a>
-        </li>
-        <li class="nav-item">
-            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>菜品管理</span><i class="my-icon nav-more"></i></a>
-            <ul>
-                <li><a href="javascript:;"><span>菜品列表</span></a></li>
-                <li><a href="javascript:;"><span>添加菜品</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>会员管理</span><i class="my-icon nav-more"></i></a>
-            <ul>
-                <li><a href="javascript:;"><span>会员列表</span></a></li>
-                <li><a href="javascript:;"><span>添加会员</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>财务管理</span><i class="my-icon nav-more"></i></a>
-            <ul>
-                <li><a href="javascript:;"><span>订单列表</span></a></li>
-                <li><a href="javascript:;"><span>日结算</span></a></li>
-                <li><a href="javascript:;"><span>总结算</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>库存管理</span><i class="my-icon nav-more"></i></a>
-            <ul>
-                <li><a href="javascript:;"><span>在线订货</span></a></li>
-                <li><a href="javascript:;"><span>导入入库单</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>员工管理</span><i class="my-icon nav-more"></i></a>
-            <ul>
-                <li><a href="employList.html"><span>员工列表</span></a></li>
-                <li><a href="employAdd.html"><span>添加员工</span></a></li>
-                <li><a href="employsalary.html"><span>发放薪资</span></a></li>
-            </ul>
-        </li>
-    </ul>
-</div>
 <div  id="main">
     <!--页面head-->
     <div id="head_1">
-        
-        <div class="dropdown" style="background: rgba(138,60,63,0.8);margin-left: 1120px;">
+        <div id="feather" style="margin-left: 10px;margin-top:30px;float: left;height: 25px;width: 350px;">
+     <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=1" width="330" height="35" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+            </div>
+        <div class="dropdown" style="margin-left: 1120px;">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     陈伟
     <span class="caret"></span>
@@ -174,7 +119,7 @@
         </div><br><br>
         <div style="margin-left: 13%">
             <input id="form_1" type="submit" name="login" value="确认添加" style="width: 48%;">
-            <input id="form_1" type="reset" name="login" value="清空重置" style="width: 49%;">
+            <input id="form_1" type="reset" name="reset" value="清空重置" style="width: 49%;">
         </div>
     </form>
 </div>
@@ -186,6 +131,4 @@
 
  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/nav.js"></script>
-<script type="text/javascript"  src="js/index.js"></script>
 </html>
