@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>员工管理-员工列表</title>
-    <meta charset="utf-8">
+	<title>库存管理-在线订货</title>
+	<meta charset="utf-8">
 </head>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link href="css/iconfont.css" rel="stylesheet">
-    <link href="css/nav.css" rel="stylesheet">                   
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="css/iconfont.css" rel="stylesheet">    
+    <link href="css/nav.css" rel="stylesheet">              
 
-    <style type="text/css">
+	<style type="text/css">
     *{
         padding: 0;
         margin: 0;
     }
-    body{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
+	body{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
     #main{
         height: 100%;
         width: 100%;
@@ -31,7 +31,6 @@
         width: 100%;
         height: 58px;
         background-color: rgba(138,60,63,0.8);
-        float: left;
     }
     #tab{
         height: 500px;
@@ -43,13 +42,13 @@
         float: left;
         margin-left: 10px;
     }
-    .td{
-        width: 150px;
+   .td{
+        width: 200px;
         height: 80px;
     }
     .tr{
          height: 80px;
-         width: 150px;
+         width: 200px;
     }
     .anniu{
         background-image: url(images/4.jpg);
@@ -58,12 +57,15 @@
         border-radius: 5px;
         font-size: 20px;
     }
-    .anniu1{
-        background: red;
+    .anniu3{
+        background: lightblue;
         border-width: 1px;
         font-family: 楷体;
         border-radius: 5px;
-        font-size: 20px;
+        width: 200px;
+        height: 60px;
+        font-size: 30px;
+        
     }
 </style>
 <body>
@@ -72,8 +74,8 @@
     <div id="head_1">
         <div id="feather" style="margin-left: 10px;margin-top:30px;float: left;height: 25px;width: 350px;">
      <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=1" width="300" height="35" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-   </div>
-        <div class="dropdown" style="background: rgba(138,60,63,0.8);margin-left: 1120px;">
+            </div>
+        <div class="dropdown" style="margin-left: 1120px;">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     陈伟
     <span class="caret"></span>
@@ -89,97 +91,44 @@
 </div>
 <div>
     <br>
-    <p style="font-size: 30px;color: #bb1a1a;font-family: 楷体">&nbsp员工列表</p>
-    <p>&nbsp&nbsp首页>员工管理>员工列表</p>
+    <p style="font-size: 30px;color: #bb1a1a;font-family: 楷体">&nbsp在线订货</p>
+    <p>&nbsp&nbsp首页>库存管理>在线订货</p>
 </div>
    <div id="tab">
         <div id="search">
-            <table style="height: 70px;width: 600px;">
-                <tr><td>编号</td><td>名字</td><td>职位</td><td>性别</td><td></td></tr>
-                <tr><td><input type="text" style="width: 90px;"></td><td><input type="text" style="width: 90px;"></td><td><input type="text" style="width: 90px;"></td><td><input type="text" style="width: 90px;"></td><td>
-                    <div class="btn-group" role="group" aria-label="...">
-                    <submit type="submit" class="btn btn-info">搜索</submit>
-                </div>
-                </td></tr>
+            <table style="height: 70px;width:400px;">
+                <tr><td>&nbsp<input type="submit" value="生成入库单"  class="anniu3"></td></tr>
             </table>
         </div>
         <table border="1" style="background-image: url(images/2.jpg);text-align: center;">
             
            
-            <tr class="tr"><td class="td">id</td><td class="td">职位</td><td class="td">名称</td><td class="td">性别</td><td class="td">电话</td><td class="td">密码</td><td class="td">操作</td></tr>
+            <tr class="tr"><td></td><td >图片</td><td class="td">名称</td><td class="td">类别</td><td class="td">进价</td><td class="td">库存</td><td class="td">订货数量</td>
             <tbody id="tablelsw">
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            </tbody>    
-       </table>
-        <nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li>
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li><span id="spanFirst">第一页</span> </li>
-    <li><span id="spanPre">上一页</span> </li>
-    <li><span id="spanNext">下一页</span> </li>
-    <li><span id="spanLast">最后一页</span> </li>
-    <li><span>第<span id="spanPageNum"></span>页<span>/
-    <span>共<span id="spanTotalPage"></span>页</span> </li>  
-<li>
-      <a href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-   </div>
+            <tr class="tr"><td style="height: 20px;width: 20px;"><input type="radio" name=""></td><td><img src="images/cai.jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td contentEditable="true">111</td></tr>
+            <tr class="tr"><td style="height: 20px;width: 20px;"><input type="radio" name=""></td><td><img src="images/cai (1).jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td contentEditable="true">111</td></tr>
+            <tr class="tr"><td style="height: 20px;width: 20px;"><input type="radio" name=""></td><td><img src="images/cai (2).jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td contentEditable="true">111</td></tr>
+            <tr class="tr"><td style="height: 20px;width: 20px;"><input type="radio" name=""></td><td><img src="images/cai (3).jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td contentEditable="true">111</td></tr>
+            <tr class="tr"><td style="height: 20px;width: 20px;"><input type="radio" name=""></td><td><img src="images/cai (4).jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td contentEditable="true">111</td></tr>
+            <tr class="tr"><td style="height: 20px;width: 20px;"><input type="radio" name=""></td><td><img src="images/cai (5).jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td contentEditable="true">111</td></tr>
+            <tr class="tr"><td style="height: 20px;width: 20px;"><input type="radio" name=""></td><td><img src="images/cai (6).jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td contentEditable="true">111</td></tr>
+            
+           </tbody>
+        </table>
+    <span id="spanFirst">第一页</span> 
+    <span id="spanPre">上一页</span> 
+    <span id="spanNext">下一页</span> 
+    <span id="spanLast">最后一页</span> 
+    第<span id="spanPageNum"></span>页/共<span id="spanTotalPage"></span>页 
 
+   </div>
 </div>
+
 </body>
+
  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/nav.js"></script>
-    
 </html>
 <script>  
 // JavaScript Document By lishewen   
