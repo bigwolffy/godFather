@@ -5,9 +5,34 @@
    <select id="selectAllDish" resultType="com.model.Dish">
     select * from dish
   </select>
+  
+  
+   <select id="selectAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from dish
+  </select>
+
+  <update id="updateByName"  parameterType="java.util.Map">
+  
+   <foreach collection="map" index="key"  item="value" separator=";">
+   update dish set repertory=repertory+${value} where name=#{key}           
+   </foreach>
+  
+  </update>
+  
+  
+  <select id="selectByName" parameterType="java.util.Map"   resultType="com.model.Dish">
+    select * from dish where name in 
+     <foreach collection="map"   index="key" open="(" close=")"  separator=","> 
+      #{key}    
+     </foreach>
+  </select>
 
 
-
+ <insert id="insertSpend"  parameterType="java.util.Map" >
+   insert into spending(date,amount) values(#{date},#{amount})
+ </insert>
 
   <resultMap id="BaseResultMap" type="com.model.Dish">
     <id column="id" jdbcType="INTEGER" property="id" />

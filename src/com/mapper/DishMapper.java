@@ -1,6 +1,9 @@
 package com.mapper;
 
 import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Param;
 
 import com.model.Dish;
 
@@ -20,4 +23,14 @@ public interface DishMapper {
     
     
     List<Dish>  selectAllDish();
+    
+    int updateByName(@Param("map")  Map<String,Integer> map);
+    
+    List<Dish> selectByName(@Param("map")  Map<String, Integer> map);
+    
+    int insertSpend(Map<String, String> map);
+    
+    List<Dish> selectAll();
+    
+    
  }

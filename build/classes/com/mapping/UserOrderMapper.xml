@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.UserOrderMapper">
+   
+   <select id="sesectAll"   resultType="java.lang.String">
+     select * from UserOrder where time=#{date}
+   </select>
+
+
+    <select id="sesectBySearch"   parameterType="com.model.UserOrder"  resultType="com.model.UserOrder">
+     select * from UserOrder where 
+     <if test="dinTable!=''">
+        dinTable=#{dinTable} and
+     </if>
+     <if test="isPay">
+       isPay=#{isPay} and
+      </if>
+      1=1
+   </select>
+
   <resultMap id="BaseResultMap" type="com.model.UserOrder">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="time" jdbcType="DATE" property="time" />

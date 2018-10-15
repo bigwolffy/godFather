@@ -13,16 +13,15 @@ import com.model.Staff;
 
 import com.service.StaffService;
 
-
+@RequestMapping(value="staff")
 @Controller
-@RequestMapping("staff")
 public class StaffController {
       
        @Resource
        private StaffService staffService;
 	
 	  //员工登陆	   
-	   @RequestMapping("login.god")
+	   @RequestMapping(value="/login.god")
 	   @ResponseBody
 	   public JSONObject login(@RequestBody Staff staff) {
 		  return staffService.login(staff);
@@ -31,7 +30,7 @@ public class StaffController {
 	   
 	   
 	 //搜索员工信息
-	   @RequestMapping("searchStaff.god")
+	   @RequestMapping(value="/searchStaff.god")
 	   @ResponseBody
 	   public List<Staff> searchStaff(@RequestBody Staff staff) {
 		  return staffService.searchStaff(staff);
@@ -39,7 +38,7 @@ public class StaffController {
 	}
 	   
       //新增员工
-	   @RequestMapping("insertStaff.god")
+	   @RequestMapping(value="/addStaff.god")
 	   @ResponseBody
 	   public JSONObject insertStaff(@RequestBody Staff staff) {
 		  return staffService.insertStaff(staff);
@@ -48,7 +47,7 @@ public class StaffController {
 	   
 	   
 	   //修改员工
-	   @RequestMapping("insertStaff.god")
+	   @RequestMapping(value="/insertStaff.god")
 	   @ResponseBody
 	   public JSONObject updateByPrimaryKey(@RequestBody Staff staff) {
 		  return staffService.insertStaff(staff);
@@ -56,7 +55,7 @@ public class StaffController {
 	}
 	   
 	   //删除员工
-	   @RequestMapping("insertStaff.god")
+	   @RequestMapping(value="/deleteStaff.god")
 	   @ResponseBody
 	   public JSONObject deleteByPrimaryKey(@RequestBody Staff staff) {
 		  return staffService.insertStaff(staff);

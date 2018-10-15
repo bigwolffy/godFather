@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>员工管理-员工列表</title>
-    <meta charset="utf-8">
+	<title>老干爹火锅-主界面</title>
+	<meta charset="utf-8">
 </head>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link href="css/iconfont.css" rel="stylesheet">
-    <link href="css/nav.css" rel="stylesheet">                   
+    <link href="css/nav.css" rel="stylesheet">
 
-    <style type="text/css">
+	<style type="text/css">
     *{
         padding: 0;
         margin: 0;
     }
-    body{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
+	body{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		min-width: 1500px;
+        background-image: url(images/login_bg.jpg);
+       
+	}
     #main{
         height: 100%;
-        width: 100%;
+        width: 85%;
         position: absolute;
         top:0;right:0;
         background: url(images/all_bg1.jpg);
@@ -31,48 +34,66 @@
         width: 100%;
         height: 58px;
         background-color: rgba(138,60,63,0.8);
-        float: left;
-    }
-    #tab{
-        height: 500px;
-        width: 1000px;
-        color: black;
-        font-size: 16px;
-        font-family: 宋体;
-        border-width: 1px;
-        float: left;
-        margin-left: 10px;
-    }
-    .td{
-        width: 150px;
-        height: 80px;
-    }
-    .tr{
-         height: 80px;
-         width: 150px;
-    }
-    .anniu{
-        background-image: url(images/4.jpg);
-        border-width: 1px;
-        font-family: 楷体;
-        border-radius: 5px;
-        font-size: 20px;
-    }
-    .anniu1{
-        background: red;
-        border-width: 1px;
-        font-family: 楷体;
-        border-radius: 5px;
-        font-size: 20px;
     }
 </style>
 <body>
+		<div class="nav" >
+    <div class="nav-top">
+        <div id="mini" style="border-bottom:1px solid rgba(255,255,255,0.1)"><img src="images/mini.png"  id="menu"><span style="color: #abb1b7;font-size: 20px;">老干爹火锅</span> </div>
+    </div>
+    <ul>  
+        <li class="nav-item">
+            <a href="index.html"><i class="my-icon nav-icon icon_1"></i><span>首页</span><i class="my-icon nav-more"></i></a>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_2"></i><span>买单结算</span><i class="my-icon nav-more"></i></a>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>前台服务</span><i class="my-icon nav-more"></i></a>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>菜品管理</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="javascript:;"><span>菜品列表</span></a></li>
+                <li><a href="javascript:;"><span>添加菜品</span></a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>会员管理</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="javascript:;"><span>会员列表</span></a></li>
+                <li><a href="javascript:;"><span>添加会员</span></a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>财务管理</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="javascript:;"><span>订单列表</span></a></li>
+                <li><a href="javascript:;"><span>日结算</span></a></li>
+                <li><a href="javascript:;"><span>总结算</span></a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>库存管理</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="javascript:;"><span>在线订货</span></a></li>
+                <li><a href="javascript:;"><span>导入入库单</span></a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>员工管理</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="employList.html"><span>员工列表</span></a></li>
+                <li><a href="employAdd.html"><span>添加员工</span></a></li>
+                <li><a href="javascript:;"><span>发放薪资</span></a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
 <div  id="main">
     <!--页面head-->
     <div id="head_1">
-        <div id="feather" style="margin-left: 10px;margin-top:30px;float: left;height: 25px;width: 350px;">
-     <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=1" width="300" height="35" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-   </div>
+        
         <div class="dropdown" style="background: rgba(138,60,63,0.8);margin-left: 1120px;">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     陈伟
@@ -86,239 +107,18 @@
     <li><a href="#">退出</a></li>
   </ul>
 </div>
+    </div>
 </div>
+<!--详细内容设计  -->
 <div>
-    <br>
-    <p style="font-size: 30px;color: #bb1a1a;font-family: 楷体">&nbsp员工列表</p>
-    <p>&nbsp&nbsp首页>员工管理>员工列表</p>
+    
 </div>
-   <div id="tab">
-        <div id="search">
-            <table style="height: 70px;width: 600px;">
-                <tr><td>编号</td><td>名字</td><td>职位</td><td>性别</td><td></td></tr>
-                <tr><td><input type="text" style="width: 90px;"></td><td><input type="text" style="width: 90px;"></td><td><input type="text" style="width: 90px;"></td><td><input type="text" style="width: 90px;"></td><td>
-                    <div class="btn-group" role="group" aria-label="...">
-                    <submit type="submit" class="btn btn-info">搜索</submit>
-                </div>
-                </td></tr>
-            </table>
-        </div>
-        <table border="1" style="background-image: url(images/2.jpg);text-align: center;">
-            
-           
-            <tr class="tr"><td class="td">id</td><td class="td">职位</td><td class="td">名称</td><td class="td">性别</td><td class="td">电话</td><td class="td">密码</td><td class="td">操作</td></tr>
-            <tbody id="tablelsw">
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td>
-            <td><div class="btn-group" role="group" aria-label="...">
-                     <submit type="submit" class="btn btn-info">编辑</submit>
-                    <submit type="button" class="btn btn-danger" >删除</submit>
-                    </div>
-                </td></tr>
-            </tbody>    
-       </table>
-        <nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li>
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li><span id="spanFirst">第一页</span> </li>
-    <li><span id="spanPre">上一页</span> </li>
-    <li><span id="spanNext">下一页</span> </li>
-    <li><span id="spanLast">最后一页</span> </li>
-    <li><span>第<span id="spanPageNum"></span>页<span>/
-    <span>共<span id="spanTotalPage"></span>页</span> </li>  
-<li>
-      <a href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-   </div>
 
-</div>
 </body>
+
+
  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/nav.js"></script>
-    
+<script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript"  src="js/index.js"></script>
 </html>
-<script>  
-// JavaScript Document By lishewen   
-var theTable = document.getElementById("tablelsw");   
-var totalPage = document.getElementById("spanTotalPage");   
-var pageNum = document.getElementById("spanPageNum");   
-  
-var spanPre = document.getElementById("spanPre");   
-var spanNext = document.getElementById("spanNext");   
-var spanFirst = document.getElementById("spanFirst");   
-var spanLast = document.getElementById("spanLast");   
-  
-var totalPaget = document.getElementById("spanTotalPaget");   
-var pageNumt = document.getElementById("spanPageNumt");   
-  
-var spanPret = document.getElementById("spanPret");   
-var spanNextt = document.getElementById("spanNextt");   
-var spanFirstt = document.getElementById("spanFirstt");   
-var spanLastt = document.getElementById("spanLastt");   
-  
-var numberRowsInTable = theTable.rows.length;   
-var pageSize = 4;   
-var page = 1;   
-  
-//下一页   
-function next(){   
-  
-    hideTable();   
-       
-    currentRow = pageSize * page;   
-    maxRow = currentRow + pageSize;   
-    if ( maxRow > numberRowsInTable ) maxRow = numberRowsInTable;   
-    for ( var i = currentRow; i< maxRow; i++ ){   
-        theTable.rows[i].style.display = '';   
-    }   
-    page++;   
-       
-    if ( maxRow == numberRowsInTable ) { nextText(); lastText(); }   
-    showPage();   
-    preLink();   
-    firstLink();   
-}   
-  
-//上一页   
-function pre(){   
-  
-    hideTable();   
-       
-    page--;   
-       
-    currentRow = pageSize * page;   
-    maxRow = currentRow - pageSize;   
-    if ( currentRow > numberRowsInTable ) currentRow = numberRowsInTable;   
-    for ( var i = maxRow; i< currentRow; i++ ){   
-        theTable.rows[i].style.display = '';   
-    }   
-       
-       
-    if ( maxRow == 0 ){ preText(); firstText(); }   
-    showPage();   
-    nextLink();   
-    lastLink();   
-}   
-  
-//第一页   
-function first(){   
-    hideTable();   
-    page = 1;   
-    for ( var i = 0; i<pageSize; i++ ){   
-        theTable.rows[i].style.display = '';   
-    }   
-    showPage();   
-       
-    preText();   
-    nextLink();   
-    lastLink();   
-}   
-  
-//最后一页   
-function last(){   
-    hideTable();   
-    page = pageCount();   
-    currentRow = pageSize * (page - 1);   
-    for ( var i = currentRow; i<numberRowsInTable; i++ ){   
-        theTable.rows[i].style.display = '';   
-    }   
-    showPage();   
-       
-    preLink();   
-    nextText();   
-    firstLink();   
-}   
-  
-function hideTable(){   
-    for ( var i = 0; i<numberRowsInTable; i++ ){   
-        theTable.rows[i].style.display = 'none';   
-    }   
-}   
-  
-function showPage(){   
-    pageNum.innerHTML = page;   
-    pageNumt.innerHTML = page;   
-}   
-  
-//总共页数   
-function pageCount(){   
-    var count = 0;   
-    if ( numberRowsInTable%pageSize != 0 ) count = 1;    
-    return parseInt(numberRowsInTable/pageSize) + count;   
-}   
-  
-//显示链接   
-function preLink(){ spanPre.innerHTML = "<a href='javascript:pre();'>上一页</a>"; spanPret.innerHTML = "<a href='javascript:pre();'>上一页</a>";}   
-function preText(){ spanPre.innerHTML = "上一页"; spanPret.innerHTML = "上一页"; }   
-  
-function nextLink(){ spanNext.innerHTML = "<a href='javascript:next();'>下一页</a>"; spanNextt.innerHTML = "<a href='javascript:next();'>下一页</a>";}   
-function nextText(){ spanNext.innerHTML = "下一页"; spanNextt.innerHTML = "下一页";}   
-  
-function firstLink(){ spanFirst.innerHTML = "<a href='javascript:first();'>第一页</a>"; spanFirstt.innerHTML = "<a href='javascript:first();'>第一页</a>";}   
-function firstText(){ spanFirst.innerHTML = "第一页"; spanFirstt.innerHTML = "第一页";}   
-  
-function lastLink(){ spanLast.innerHTML = "<a href='javascript:last();'>最后一页</a>"; spanLastt.innerHTML = "<a href='javascript:last();'>最后一页</a>";}   
-function lastText(){ spanLast.innerHTML = "最后一页"; spanLastt.innerHTML = "最后一页";}   
-  
-//隐藏表格   
-function hide(){   
-    for ( var i = pageSize; i<numberRowsInTable; i++ ){   
-        theTable.rows[i].style.display = 'none';   
-    }   
-       
-    totalPage.innerHTML = pageCount();   
-    pageNum.innerHTML = '1';   
-       
-    totalPaget.innerHTML = pageCount();   
-    pageNumt.innerHTML = '1';   
-       
-    nextLink();   
-    lastLink();   
-}   
-  
-hide();   
-</script> 

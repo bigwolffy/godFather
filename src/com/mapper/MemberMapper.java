@@ -1,5 +1,7 @@
 package com.mapper;
 
+import java.util.List;
+
 import com.model.Member;
 
 public interface MemberMapper {
@@ -14,4 +16,6 @@ public interface MemberMapper {
     int updateByPrimaryKeySelective(Member record);
 
     int updateByPrimaryKey(Member record);
+    
+    List<Member> selectAll();
 }

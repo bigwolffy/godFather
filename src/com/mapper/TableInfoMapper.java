@@ -1,5 +1,7 @@
 package com.mapper;
 
+import java.util.List;
+
 import com.model.TableInfo;
 
 public interface TableInfoMapper {
@@ -14,4 +16,6 @@ public interface TableInfoMapper {
     int updateByPrimaryKeySelective(TableInfo record);
 
     int updateByPrimaryKey(TableInfo record);
+    
+    List<TableInfo> selectAll();
 }
