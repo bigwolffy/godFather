@@ -93,13 +93,13 @@
   
   <select id="searchTable"  parameterType="com.model.TableInfo"  resultMap="BaseResultMap">
     select * from tableinfo where
-    <if test="id!=''  and id!=null">
+    <if test="id!=''">
      id=#{id} and
     </if>
-    <if test="personavail!=''  and personavail!=null">
+    <if test="personavail!=''">
       personAvail=#{personavail} and 
     </if>
-    <if test="isuse!=''  and isuse!=null">
+    <if test="isuse!=''">
      isUse=#{isuse} and
     </if>
     1=1

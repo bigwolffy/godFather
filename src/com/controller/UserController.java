@@ -85,9 +85,7 @@ public class UserController {
 	
 	//获取菜品信息
 	@RequestMapping("/getAllDish.god")
-	public List<Dish> getAllDish(HttpServletRequest request){
-		HttpSession session=request.getSession();
-		session.setAttribute("caiguanli", uService.getAllDish());
+	public List<Dish> getAllDish(){
 		return uService.getAllDish();
 	}
 

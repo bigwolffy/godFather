@@ -26,7 +26,7 @@
         width: 100%;
         position: absolute;
         top:0;right:0;
-        background: url(images/all_bg1.jpg);
+        background: url(images/4.jpg);
         background-size: cover;
     }
     #head_1{
@@ -34,6 +34,7 @@
         width: 100%;
         height: 58px;
         background-color: rgba(138,60,63,0.8);
+        background: url(images/3.jpg);
     }
     #tab{
         height: 500px;
@@ -307,7 +308,7 @@ function  sousuo(){
 		   async:false,
 		   data:"id="+$("#bianhao").val()+"&personavail="+$("#renshu").val()+"&isuse="+$("#zhuangtai").val(),
 		   success: function(data){
-			   location.reload();
+               console.log(data);
 			},
 			error:function(){
 				alert("出错啦");

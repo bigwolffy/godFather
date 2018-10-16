@@ -22,7 +22,7 @@ public class UerOrderController {
 	
 	@RequestMapping(value="/selectAll.god")
 	public List<UserOrder> selectAll(HttpServletRequest request) {
-		
+		System.out.println("********************8");
 		HttpSession session=request.getSession();
 		session.setAttribute("maidan", userOrderService.selectAll());
 		
