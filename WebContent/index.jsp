@@ -43,12 +43,12 @@ body {
 			</div>
 		</div>
 		<ul>
-			<li class="nav-item"><a href="main.html" target="iframe"><i
+			<li class="nav-item"><a href="main.jsp" target="iframe"><i
 					class="my-icon nav-icon icon_1"></i><span>首页</span></a></li>
-			<li class="nav-item"><a href="check.html" target="iframe"><i
-					class="my-icon nav-icon icon_2"></i><span>买单结算</span></a></li>
-			<li class="nav-item"><a href="serviceHelp.html" target="iframe"><i
-					class="my-icon nav-icon icon_3"></i><span>前台服务</span></a></li>
+			<li class="nav-item"><a href="check.jsp" target="iframe"><i
+					class="my-icon nav-icon icon_2"></i><span onclick="jiesuan()">买单结算</span></a></li>
+			<li class="nav-item"><a href="serviceHelp.jsp" target="iframe"><i
+					class="my-icon nav-icon icon_3"></i><span onclick="canzhuo()">前台服务</span></a></li>
 			<li class="nav-item"><a href="javascript:;"><i
 					class="my-icon nav-icon icon_3"></i><span>菜品管理</span><i
 					class="my-icon nav-more"></i></a>
@@ -92,7 +92,7 @@ body {
 
 	<div>
 		<!--页面head-->
-		<iframe src="main.html" name="iframe" scrolling="no" id="main"></iframe>
+		<iframe src="main.jsp" name="iframe" scrolling="no" id="main"></iframe>
 
 	</div>
 
@@ -100,4 +100,36 @@ body {
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/nav.js"></script>
+
+<script type="text/javascript">
+  function jiesuan(){
+		$.ajax({
+			   type: "post",
+			   url: "userorder/selectAll.god",
+			   async:false,
+			   success: function(data){
+
+				},
+				error:function(){
+					alert("出错啦");
+				}
+		});
+		
+
+  }
+  
+  
+  function canzhuo(){
+		$.ajax({
+			   type: "post",
+			   url: "user/getAllTableInfo.god",
+			   async:false,
+
+		});
+		
+
+}
+  
+</script>
+
 </html>

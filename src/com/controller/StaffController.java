@@ -2,6 +2,8 @@ package com.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +25,10 @@ public class StaffController {
 	  //员工登陆	   
 	   @RequestMapping(value="/login.god")
 	   @ResponseBody
-	   public JSONObject login(@RequestBody Staff staff) {
+	   public JSONObject login(@RequestBody Staff staff ,HttpServletRequest request) {
+		  HttpSession session=request.getSession(); 
+		  session.setAttribute("userName", staff.getName());
+		   
 		  return staffService.login(staff);
 		  
 	}

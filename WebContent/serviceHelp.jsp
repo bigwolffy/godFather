@@ -1,14 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>买单结算</title>
+	<title>前台服务</title>
 	<meta charset="utf-8">
 </head>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link href="css/iconfont.css" rel="stylesheet">
-    <link href="css/nav.css" rel="stylesheet">
-    <span id="spanFirstt">第一页</span> <span id="spanPret">上一页</span> <span id="spanNextt">下一页</span> <span id="spanLastt">最后一页</span> 第<span id="spanPageNumt"></span>页/共<span id="spanTotalPaget"></span>页                  
-
+    <link href="css/iconfont.css" rel="stylesheet">    
+    <link href="css/nav.css" rel="stylesheet">            
 	<style type="text/css">
     *{
         padding: 0;
@@ -44,12 +46,17 @@
         margin-left: 10px;
     }
     .td{
-        width: 180px;
+        width: 200px;
         height: 80px;
     }
     .tr{
          height: 80px;
-         width: 180px;
+         width: 200px;
+    }
+    #search{
+        height: 100px;
+        width: 1000px;
+        
     }
     .anniu{
         background-image: url(images/4.jpg);
@@ -82,21 +89,31 @@
 </div>
 <div>
     <br>
-    <p style="font-size: 30px;color: #bb1a1a;font-family: 楷体">&nbsp买单结算</p>
-    <p>&nbsp&nbsp首页>买单结算</p>
+    <p style="font-size: 30px;color: #bb1a1a;font-family: 楷体">&nbsp前台服务</p>
+    <p>&nbsp&nbsp首页>前台服务</p>
 </div>
    <div id="tab">
-   
+        <div id="search">
+            <table style="height: 70px;width: 600px;">
+                <tr><td>编号</td><td>人数</td><td>状态</td><td></td></tr>
+                <tr><td><input type="text" id="bianhao"></td><td><input type="text" id="renshu"></td><td><input type="text" id="zhuangtai"></td><td>&nbsp<input type="button" value="搜索" class="anniu" onclick="sousuo()"></td></tr>
+            </table>
+        </div>
         <table border="1" style="background-image: url(images/2.jpg);text-align: center;">
             
-            <tr class="tr"><td class="td">id</td><td class="td">时间</td><td class="td">餐桌</td><td class="td">金额</td><td class="td">是否付款</td><td class="td">操作</td></tr>
+            <tr class="tr"><td class="td">桌号</td><td class="td">桌名</td><td class="td">可使用人数</td><td class="td">是否使用</td><td class="td">操作</td></tr>
             <tbody id="tablelsw">
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="结算">&nbsp<input type="submit" class="anniu" alue="查看详情"></td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="结算">&nbsp<input type="submit" class="anniu" value="查看详情"></td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="结算">&nbsp<input type="submit" class="anniu" value="查看详情"></td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="结算">&nbsp<input type="submit" class="anniu" value="查看详情"></td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="结算">&nbsp<input type="submit" class="anniu" value="查看详情"></td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="结算">&nbsp<input type="submit" class="anniu" value="查看详情"></td></tr>
+            <c:forEach items="${canzhuo}" var="c">
+						<tr>
+							<td>${c.id}</td>
+							<td>${c.tablename}</td>
+							<td>${c.personavail}</td>
+							<td>${c.isuse}</td>
+							<td><input type="button" value="查看订单"  onclick="">
+							    <input type="button" value="使用"  onclick="useTable(this)"></td>
+						
+						</tr>
+					</c:forEach>
            </tbody>
         </table>
     <span id="spanFirst">第一页</span> 
@@ -106,6 +123,7 @@
     第<span id="spanPageNum"></span>页/共<span id="spanTotalPage"></span>页 
 
    </div>
+</div>
 
 </div>
 
@@ -136,7 +154,7 @@ var spanFirstt = document.getElementById("spanFirstt");
 var spanLastt = document.getElementById("spanLastt");   
   
 var numberRowsInTable = theTable.rows.length;   
-var pageSize = 5;   
+var pageSize = 4;   
 var page = 1;   
   
 //下一页   
@@ -256,4 +274,45 @@ function hide(){
 }   
   
 hide();   
+
+
+function useTable(index){
+	var id=index.parentNode.parentNode.firstElementChild.innerHTML;
+	console.log(id)
+
+	  $.ajax({
+		   type: "post",
+		   url: "user/useTableById.god",
+		   async:false,
+		   data:"id="+id,
+		   success: function(data){
+
+			},
+			error:function(){
+				alert("出错啦");
+			}
+			
+	});
+
+	  index.parentNode.previousElementSibling.innerHTML="已使用";
+}
+
+
+function  sousuo(){
+	
+	console.log("id="+$("#bianhao").val()+"&personavail="+$("#renshu").val()+"&isuse="+$("#zhuangtai").val());
+	$.ajax({
+		   type: "post",
+		   url: "user/searchTable.god",
+		   async:false,
+		   data:"id="+$("#bianhao").val()+"&personavail="+$("#renshu").val()+"&isuse="+$("#zhuangtai").val(),
+		   success: function(data){
+               console.log(data);
+			},
+			error:function(){
+				alert("出错啦");
+			}
+			
+	});
+}
 </script> 

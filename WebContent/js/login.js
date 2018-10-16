@@ -5,14 +5,14 @@ $("#login").click(function(){
 	console.log(JSON.stringify(jsonData));
 	$.ajax({
 		   type: "post",
-		   url: "user/login.god",
+		   url: "staff/login.god",
 		   contentType:"application/json;charset=utf-8",
 		   data: JSON.stringify(jsonData),
 		   success: function(data){
 			   
 			  if(data.msg==true){
 					
-					window.location.href="index.html";
+					window.location.href="index.jsp";
 					
 				}else{
 					alert("账号密码错误");

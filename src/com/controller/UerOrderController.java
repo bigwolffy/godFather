@@ -3,6 +3,8 @@ package com.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +21,11 @@ public class UerOrderController {
 	private UserOrderService userOrderService;
 	
 	@RequestMapping(value="/selectAll.god")
-	public List<UserOrder> selectAll() {
+	public List<UserOrder> selectAll(HttpServletRequest request) {
+		System.out.println("********************8");
+		HttpSession session=request.getSession();
+		session.setAttribute("maidan", userOrderService.selectAll());
+		
 		return userOrderService.selectAll();
 
 	}

@@ -3,7 +3,7 @@ package com.model;
 public class TableInfo {
     private Integer id;
 
-    private Integer tablenumber;
+
 
     private String tablename;
 
@@ -19,13 +19,7 @@ public class TableInfo {
         this.id = id;
     }
 
-    public Integer getTablenumber() {
-        return tablenumber;
-    }
-
-    public void setTablenumber(Integer tablenumber) {
-        this.tablenumber = tablenumber;
-    }
+ 
 
     public String getTablename() {
         return tablename;

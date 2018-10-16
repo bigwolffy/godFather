@@ -1,12 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
+	<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>前台服务</title>
+	<title>买单结算</title>
 	<meta charset="utf-8">
 </head>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link href="css/iconfont.css" rel="stylesheet">    
-    <link href="css/nav.css" rel="stylesheet">            
+    <link href="css/iconfont.css" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet">
+    <span id="spanFirstt">第一页</span> <span id="spanPret">上一页</span> <span id="spanNextt">下一页</span> <span id="spanLastt">最后一页</span> 第<span id="spanPageNumt"></span>页/共<span id="spanTotalPaget"></span>页                  
+
 	<style type="text/css">
     *{
         padding: 0;
@@ -42,17 +49,12 @@
         margin-left: 10px;
     }
     .td{
-        width: 200px;
+        width: 180px;
         height: 80px;
     }
     .tr{
          height: 80px;
-         width: 200px;
-    }
-    #search{
-        height: 100px;
-        width: 1000px;
-        
+         width: 180px;
     }
     .anniu{
         background-image: url(images/4.jpg);
@@ -62,6 +64,10 @@
         font-size: 20px;
     }
 </style>
+
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+
+
 <body>
 <div  id="main">
     <!--页面head-->
@@ -71,7 +77,7 @@
             </div>
         <div class="dropdown" style="margin-left: 1120px;">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    陈伟
+    ${sessionScope.userName} 
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -85,26 +91,31 @@
 </div>
 <div>
     <br>
-    <p style="font-size: 30px;color: #bb1a1a;font-family: 楷体">&nbsp前台服务</p>
-    <p>&nbsp&nbsp首页>前台服务</p>
+    <p style="font-size: 30px;color: #bb1a1a;font-family: 楷体">&nbsp买单结算</p>
+    <p>&nbsp&nbsp首页>买单结算</p>
 </div>
    <div id="tab">
-        <div id="search">
-            <table style="height: 70px;width: 600px;">
-                <tr><td>编号</td><td>人数</td><td>状态</td><td></td></tr>
-                <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td>&nbsp<input type="submit" value="搜索" class="anniu" ></td></tr>
-            </table>
-        </div>
+   
         <table border="1" style="background-image: url(images/2.jpg);text-align: center;">
             
-            <tr class="tr"><td class="td">桌号</td><td class="td">桌名</td><td class="td">可使用人数</td><td class="td">是否使用</td><td class="td">操作</td></tr>
+            <tr class="tr"><td class="td">id</td><td class="td">时间</td><td class="td">餐桌</td><td class="td">金额</td><td class="td">是否付款</td><td class="td">操作</td></tr>
             <tbody id="tablelsw">
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" value="查看订单" class="anniu">&nbsp<input type="submit" value="使用" class="anniu"></td></tr>
-           <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" value="查看订单" class="anniu">&nbsp<input type="submit" value="使用" class="anniu"></td></tr>
-           <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" value="查看订单" class="anniu">&nbsp<input type="submit" value="使用" class="anniu"></td></tr>
-           <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" value="查看订单" class="anniu">&nbsp<input type="submit" value="使用" class="anniu"></td></tr>
-           <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" value="查看订单" class="anniu">&nbsp<input type="submit" value="使用" class="anniu"></td></tr>
-           <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" value="查看订单" class="anniu">&nbsp<input type="submit" value="使用" class="anniu"></td></tr>
+
+					<c:forEach items="${maidan}" var="u">
+						<tr>
+							<td>${u.id}</td>
+							<td>${u.time}</td>
+							<td>${u.dintable}</td>
+							<td>${u.price}</td>
+							<td>${u.ispay}</td>
+							<td><input type="button" value="结算"  onclick="jiesuan(this)">
+							    <input type="button" value="查看详情"></td>
+						</tr>
+					</c:forEach>
+
+
+
+					
            </tbody>
         </table>
     <span id="spanFirst">第一页</span> 
@@ -114,7 +125,6 @@
     第<span id="spanPageNum"></span>页/共<span id="spanTotalPage"></span>页 
 
    </div>
-</div>
 
 </div>
 
@@ -145,7 +155,7 @@ var spanFirstt = document.getElementById("spanFirstt");
 var spanLastt = document.getElementById("spanLastt");   
   
 var numberRowsInTable = theTable.rows.length;   
-var pageSize = 4;   
+var pageSize = 5;   
 var page = 1;   
   
 //下一页   
@@ -264,5 +274,43 @@ function hide(){
     lastLink();   
 }   
   
-hide();   
+hide();  
+
+
+
+
+
+
+
+
+
+
+
+
+  function jiesuan(index){
+	 var id=index.parentNode.parentNode.firstElementChild.innerHTML;
+
+	  $.ajax({
+		   type: "post",
+		   url: "user//billById.god",
+		   async:false,
+		   data:"id="+id,
+		   success: function(data){
+
+			},
+			error:function(){
+				alert("出错啦");
+			}
+	});
+
+	  index.parentNode.previousElementSibling.innerHTML="已付款";
+	   
+  }
+
+
+
+
+
+
+
 </script> 

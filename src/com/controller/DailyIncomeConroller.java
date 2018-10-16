@@ -25,7 +25,7 @@ public class DailyIncomeConroller {
 	
 	
 	   //年总结算
-		@RequestMapping("/day")
+		@RequestMapping("/year")
 		public List<Map<String, Object>> selectAll(){
 			return dailyIncomeService.selectAll();
 		}

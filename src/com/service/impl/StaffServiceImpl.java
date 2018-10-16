@@ -14,6 +14,8 @@ import com.service.StaffService;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,8 @@ public class StaffServiceImpl implements StaffService {
 
 	@Override
 	public JSONObject login(Staff staff) {
+				
+		
 		JSONObject jsonObject= new JSONObject();
 		List<Staff> list=staffMapper.login(staff);
 		if (list.isEmpty()) {

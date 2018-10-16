@@ -5,8 +5,9 @@ package com.controller;
 import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,9 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.model.Dish;
 import com.model.Member;
 import com.model.TableInfo;
+
 import com.model.UserOrder;
 import com.service.UserService;
 
@@ -55,17 +58,30 @@ public class UserController {
 	//前台服务部分
 	//获取桌使用信息
 	@RequestMapping("/getAllTableInfo.god")
-	public List<TableInfo> getAllTableInfo(){
+	public List<TableInfo> getAllTableInfo(HttpServletRequest request){
+		HttpSession session=request.getSession();
+		session.setAttribute("canzhuo",uService.getAllTableInfo() );
 		return uService.getAllTableInfo();
 	}
 	//使用桌
 	@RequestMapping("/useTableById.god")
 	public void useTable(@RequestParam("id")Integer id){
+		
 		TableInfo ti = new TableInfo();
 		ti.setId(id);
 		ti.setIsuse("已使用");
 		uService.updateTableInfoByPrimaryKeySelective(ti);
 	}
+	
+	//根据条件搜索餐桌
+	@RequestMapping("/searchTable.god")
+	public List<TableInfo> searchTable(TableInfo tableInfo,HttpServletRequest request){
+		
+        HttpSession session=request.getSession();
+        session.setAttribute("canzhuo", uService.searchTable(tableInfo));
+		 return  uService.searchTable(tableInfo);
+	}
+	
 	
 	//获取菜品信息
 	@RequestMapping("/getAllDish.god")
@@ -96,5 +112,8 @@ public class UserController {
 	@RequestMapping("/insertMember.god")
 	public void insertMember(Member m){
 		uService.insertMember(m);
-	}		
+	}	
+	
+	
+	
 }

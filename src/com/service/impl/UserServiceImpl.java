@@ -3,6 +3,7 @@ package com.service.impl;
 
 
 
+
 import com.mapper.DishMapper;
 import com.mapper.MemberMapper;
 import com.mapper.TableInfoMapper;
@@ -10,6 +11,7 @@ import com.mapper.UserOrderMapper;
 import com.model.Dish;
 import com.model.Member;
 import com.model.TableInfo;
+
 import com.model.UserOrder;
 import com.service.UserService;
 
@@ -64,6 +66,8 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return tiMapper.updateByPrimaryKeySelective(record);
 	}
+	
+	
 
 	@Override
 	public List<Dish> getAllDish() {
@@ -95,4 +99,12 @@ public class UserServiceImpl implements UserService {
 		mMapper.insertSelective(m);
 	}
 
+	@Override
+	public List<TableInfo> searchTable(TableInfo tableInfo) {
+		
+		return tiMapper.searchTable(tableInfo);
+	}
+    
+	
+	
 }

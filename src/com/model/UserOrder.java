@@ -1,11 +1,11 @@
 package com.model;
 
-import java.util.Date;
+
 
 public class UserOrder {
     private Integer id;
 
-    private Date time;
+    private String time;
 
     private Integer dintable;
 
@@ -21,11 +21,11 @@ public class UserOrder {
         this.id = id;
     }
 
-    public Date getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(String time) {
         this.time = time;
     }
 

@@ -2,9 +2,11 @@ package com.service;
 
 import java.util.List;
 
+
 import com.model.Dish;
 import com.model.Member;
 import com.model.TableInfo;
+
 import com.model.UserOrder;
 
 public interface UserService {
@@ -26,7 +28,11 @@ public interface UserService {
 	
 	void insertDish(Dish dish);
 	
+
+	
 	List<Member> getAllMember();
 	
 	void insertMember(Member m);
+	
+	List<TableInfo> searchTable(TableInfo tableInfo);
 }

@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.model.TableInfo;
 
+import net.sf.jsqlparser.schema.Table;
+
 public interface TableInfoMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -18,4 +20,6 @@ public interface TableInfoMapper {
     int updateByPrimaryKey(TableInfo record);
     
     List<TableInfo> selectAll();
+    
+    List<TableInfo>  searchTable(TableInfo tableInfo);
 }
