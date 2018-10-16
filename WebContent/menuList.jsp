@@ -1,13 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
+	<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>买单结算</title>
+	<title>菜品管理-菜品列表</title>
 	<meta charset="utf-8">
 </head>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link href="css/iconfont.css" rel="stylesheet">
-    <link href="css/nav.css" rel="stylesheet">
-    <span id="spanFirstt">第一页</span> <span id="spanPret">上一页</span> <span id="spanNextt">下一页</span> <span id="spanLastt">最后一页</span> 第<span id="spanPageNumt"></span>页/共<span id="spanTotalPaget"></span>页                  
+    <link href="css/nav.css" rel="stylesheet">                  
 
 	<style type="text/css">
     *{
@@ -19,27 +22,47 @@
 		width: 100%;
 		height: 100%;
 	}
-
-    #tab{
-        height: 500px;
-        width: 1000px;
-        color: black;
-        font-size: 16px;
-        font-family: 宋体;
-        border-width: 1px;
+    #main{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top:0;right:0;
+        background: url(images/all_bg1.jpg);
+        background-size: cover;
+    }
+    img{
+    width:120px;
+    height:100px;
+    }
+    #head_1{
+        opacity: 0.8;
+        width: 100%;
+        height: 58px;
+        background-color: rgba(138,60,63,0.8);
         float: left;
-        margin-left: 10px;
+    }
+    #tab{
+        width: 80%;
+        margin-top: 30px;
+        margin-left: 10%;
     }
     .td{
-        width: 180px;
+        width: 150px;
         height: 80px;
     }
     .tr{
          height: 80px;
-         width: 180px;
+         width: 150px;
     }
     .anniu{
         background-image: url(images/4.jpg);
+        border-width: 1px;
+        font-family: 楷体;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+    .anniu1{
+        background: red;
         border-width: 1px;
         font-family: 楷体;
         border-radius: 5px;
@@ -52,8 +75,8 @@
     <div id="head_1">
         <div id="feather" style="margin-left: 10px;margin-top:30px;float: left;height: 25px;width: 350px;">
      <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=1" width="330" height="35" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-            </div>
-        <div class="dropdown" style="margin-left: 1120px;">
+   </div>
+        <div class="dropdown" style="background: rgba(138,60,63,0.8);margin-left: 1120px;">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     陈伟
     <span class="caret"></span>
@@ -69,21 +92,29 @@
 </div>
 <div>
     <br>
-    <p style="font-size: 30px;color: #bb1a1a;font-family: 楷体">&nbsp买单结算</p>
-    <p>&nbsp&nbsp首页>买单结算</p>
+    <p style="font-size: 30px;color: #bb1a1a;font-family: 楷体">&nbsp菜品列表</p>
+    <p>&nbsp&nbsp首页>菜品管理>菜品列表</p>
 </div>
-   <div id="tab">
+<div id="tab">
    
         <table border="1" style="background-image: url(images/2.jpg);text-align: center;">
             
-            <tr class="tr"><td class="td">id</td><td class="td">时间</td><td class="td">餐桌</td><td class="td">金额</td><td class="td">是否付款</td><td class="td">操作</td></tr>
+            <tr class="tr"><td class="td">图片</td><td class="td">名称</td><td class="td">类别</td><td class="td">进价</td><td class="td">售价</td><td class="td">库存</td><td class="td">是否热门</td><td class="td">操作</td></tr>
             <tbody id="tablelsw">
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="结算">&nbsp<input type="submit" class="anniu" alue="查看详情"></td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="结算">&nbsp<input type="submit" class="anniu" value="查看详情"></td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="结算">&nbsp<input type="submit" class="anniu" value="查看详情"></td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="结算">&nbsp<input type="submit" class="anniu" value="查看详情"></td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="结算">&nbsp<input type="submit" class="anniu" value="查看详情"></td></tr>
-            <tr class="tr"><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="结算">&nbsp<input type="submit" class="anniu" value="查看详情"></td></tr>
+            <c:forEach items="${caiguanli}" var="c">
+						<tr>
+							<td><img src=${c.imgpath}></td>
+							<td>${c.name}</td>
+							<td>${c.type}</td>
+							<td>${c.purprice}</td>
+							<td>${c.price}</td>
+							<td>${c.repertory}</td>
+							<td>${c.ishot}</td>
+							<td><input type="button" value="编辑"  onclick="jiesuan(this)">
+							    <input type="button" value="删除"></td>
+						</tr>
+					</c:forEach>
+            
            </tbody>
         </table>
     <span id="spanFirst">第一页</span> 
@@ -91,17 +122,13 @@
     <span id="spanNext">下一页</span> 
     <span id="spanLast">最后一页</span> 
     第<span id="spanPageNum"></span>页/共<span id="spanTotalPage"></span>页 
-
    </div>
-
 </div>
-
 </body>
-
-
  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/nav.js"></script>
+    
 </html>
 <script>  
 // JavaScript Document By lishewen   

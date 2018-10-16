@@ -53,7 +53,7 @@ body {
 					class="my-icon nav-icon icon_3"></i><span>菜品管理</span><i
 					class="my-icon nav-more"></i></a>
 				<ul>
-					<li><a href="menuList.html" target="iframe"><span>菜品列表</span></a></li>
+					<li><a href="menuList.jsp" target="iframe"><span  onclick="caiguanli()">菜品列表</span></a></li>
 					<li><a href="menuAdd.html" target="iframe"><span>添加菜品</span></a></li>
 				</ul></li>
 			<li class="nav-item"><a href="javascript:;"><i
@@ -123,6 +123,18 @@ body {
 		$.ajax({
 			   type: "post",
 			   url: "user/getAllTableInfo.god",
+			   async:false,
+
+		});
+		
+
+}
+  
+  
+  function caiguanli(){
+		$.ajax({
+			   type: "post",
+			   url: "user/getAllDish.god",
 			   async:false,
 
 		});

@@ -23,7 +23,7 @@
         width: 100%;
         position: absolute;
         top:0;right:0;
-        background: url(images/4.jpg);
+        background: url(images/all_bg1.jpg);
         background-size: cover;
     }
     #head_1{
@@ -31,7 +31,7 @@
         width: 100%;
         height: 58px;
         background-color: rgba(138,60,63,0.8);
-        background: url(images/3.jpg);
+        float: left;
     }
     #tab{
         width: 80%;
@@ -93,13 +93,19 @@
             
             <tr class="tr"><td class="td">图片</td><td class="td">名称</td><td class="td">类别</td><td class="td">进价</td><td class="td">售价</td><td class="td">库存</td><td class="td">是否热门</td><td class="td">操作</td></tr>
             <tbody id="tablelsw">
-            <tr class="tr"><td><img src="images/cai.jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="编辑">&nbsp<input type="submit" class="anniu1" value="删除"></td></tr>
-            <tr class="tr"><td><img src="images/cai (1).jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="编辑">&nbsp<input type="submit" class="anniu1" value="删除"></td></tr>
-            <tr class="tr"><td><img src="images/cai (2).jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="编辑">&nbsp<input type="submit" class="anniu1" value="删除"></td></tr>
-            <tr class="tr"><td><img src="images/cai (3).jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="编辑">&nbsp<input type="submit" class="anniu1" value="删除"></td></tr>
-            <tr class="tr"><td><img src="images/cai (4).jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="编辑">&nbsp<input type="submit" class="anniu1" value="删除"></td></tr>
-            <tr class="tr"><td><img src="images/cai (5).jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="编辑">&nbsp<input type="submit" class="anniu1" value="删除"></td></tr>
-            <tr class="tr"><td><img src="images/cai (6).jpg" style=" height:70px;width: 100px;"></td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td>111</td><td><input type="submit" class="anniu" value="编辑">&nbsp<input type="submit" class="anniu1" value="删除"></td></tr>
+            <c:forEach items="${caiguanli}" var="c">
+						<tr>
+							<td>${c.imgpath}</td>
+							<td>${c.name}</td>
+							<td>${c.type}</td>
+							<td>${u.purprice}</td>
+							<td>${u.price}</td>
+							<td>${u.repertory}</td>
+							<td>${u.ishot}</td>
+							<td><input type="button" value="bianji"  onclick="jiesuan(this)">
+							    <input type="button" value="shanchu"></td>
+						</tr>
+					</c:forEach>
             
            </tbody>
         </table>
